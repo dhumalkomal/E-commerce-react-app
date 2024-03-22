@@ -1,17 +1,50 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// importing libraries
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter as Router } from 'react-router-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// for toast notification
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// for redux
+import { Provider } from 'react-redux'
+import { store } from "./app/store"
+
+// importing components
+import { App } from './components'
+
+// importing method 
+import { generateRandomUserId } from './assets/JS'
+
+// importing styles
+import './assets/styles/index.css'
+
+
+const userID = generateRandomUserId();
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  // <React.StrictMode>
+  // for redux
+  <Provider store={store}>
+
+    {/* for routing */}
+    <Router>
+      <App userID={userID}/>
+    </Router> 
+
+    {/* for notfications */}
+    <ToastContainer
+      position="top-left"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick
+      pauseOnHover
+      pauseOnFocusLoss
+      theme="light"
+    />
+    
+  </Provider>
+  // </React.StrictMode>,
+,)
