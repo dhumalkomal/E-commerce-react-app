@@ -1,5 +1,5 @@
 // importing methods
-import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { addNewProduct, delProduct, getProducts } from "../assets/JS";
 
 // initial state

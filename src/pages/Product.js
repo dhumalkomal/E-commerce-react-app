@@ -93,7 +93,7 @@ const Product = (props) => {
         setRating(product.rating);    
         setDescription(product.description);
           
-    }, [editModeActive,product,dispatch]);
+    }, [editModeActive,product,dispatch, err.message, err.status, navigate, productID]);
 
     // function to handle add to cart action
     const handleAddToCart = (productID) => {

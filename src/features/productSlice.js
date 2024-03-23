@@ -1,5 +1,5 @@
 // importing redux method
-import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 // importing function
 import { editProduct, getProduct } from "../assets/JS";
 

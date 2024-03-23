@@ -1,5 +1,5 @@
 // importing redux methods
-import { createSlice, createAsyncThunk, current } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 // importing functions
 import { getCartItems, getProduct } from "../assets/JS";
 
@@ -42,7 +42,7 @@ export const addItemIncart = createAsyncThunk(
     // action name
     'carts/addItemIncart',
     // thunk middleware
-    async (productID, {getState,rejectWithValue,fulfillWithValue}) => {
+    async (productID, {getState,rejectWithValue}) => {
         try {
 
             const response = await getProduct(productID);
@@ -118,7 +118,7 @@ export const cartSlice = createSlice({
                 message: ""
             }
             state.loading = false;
-            state.cartItems = action.payload;;
+            state.cartItems = action.payload;
         })
         builder.addCase(fetchCartItemsOfUser.pending, (state) => {
             state.loading = true;

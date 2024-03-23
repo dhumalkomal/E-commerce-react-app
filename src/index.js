@@ -1,24 +1,24 @@
 // importing libraries
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+// import React from 'react';
+import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 // for toast notification
-import { ToastContainer } from 'react-toastify'
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // for redux
-import { Provider } from 'react-redux'
-import { store } from "./app/store"
+import { Provider } from 'react-redux';
+import { store } from "./app/store";
 
 // importing components
-import { App } from './components'
+import { App } from './components';
 
 // importing method 
-import { generateRandomUserId } from './assets/JS'
+import { generateRandomUserId } from './assets/JS';
 
 // importing styles
-import './assets/styles/index.css'
+import './assets/styles/index.css';
 
 
 const userID = generateRandomUserId();
